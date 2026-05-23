@@ -18,7 +18,7 @@
 
     --font-poppins: "Poppins", sans-serif;
     --font-clash: "Clash Display", sans-serif;
-    
+
     --max-width: 1920px;
 }
 
@@ -67,15 +67,18 @@ button {
 }
 
 .section-title {
-    font-size: 24px;
-    color: var(--text-main);
-    font-weight: bold;
-    line-height: 1.2;
-    margin-bottom: 16px;
+    font-family: var(--font-clash);
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+    line-height: normal;
+    color: var(--text-light-800);
+    font-weight: 500;
+    /* line-height: 1.2; */
+    /* margin-bottom: 1rem; */
 }
 
 .section-description {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--text-description);
     margin: 0 auto;
     line-height: 1.2;
@@ -84,17 +87,17 @@ button {
 
 .container {
     width: 100%;
-    max-width: var(--max-width); 
+    max-width: var(--max-width);
     margin-inline: auto;
-    /* padding-inline: 1.5rem; */
+    padding-inline: 1.25rem;
 }
 
 .link-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
-    font-size: 14px;
+    gap: 0.25rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--text-main);
     width: fit-content;
@@ -103,4 +106,169 @@ button {
 
 .link-arrow:hover .btn-icon {
     transform: translateX(10px);
+}
+
+/* ───────── HEADER ───────── */
+.header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 4%;
+    z-index: 9999;
+}
+
+.logo {
+    color: var(--text-light-800);
+    font-family: var(--font-clash);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: right 0.4s ease;
+}
+
+.navigation.opened {
+    right: 0;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--text-light-800);
+    transition: color 0.3s;
+}
+
+/* .nav-link:hover {
+    color: var(--text-light-1000);
+} */
+
+.btn-primary {
+    background-color: var(--bg-light);
+    color: var(--text-dark-900);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+/* .btn-primary:hover {
+    background-color: var(--text-light-800);
+} */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    backdrop-filter: blur(1px);
+    z-index: 99;
+    transition: opacity 0.4s ease, visibility 0.4s;
+}
+
+.overlay.opened {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    padding: 6px;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 101;
+}
+
+.menu-mobile:active .bar {
+    opacity: 0.3;
+}
+
+.menu-mobile.opened .bar:first-child {
+    width: 24px;
+    transform: translateY(4.5px) rotate(45deg);
+}
+
+.menu-mobile.opened .bar:last-child {
+    width: 24px;
+    transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.bar {
+    width: 28px;
+    height: 2px;
+    display: block;
+    background: var(--text-light-800);
+    border-radius: 2px;
+    transition: 
+        width 0.25s ease,
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.3s ease;
+}
+
+
+@media (min-width: 720px) {
+    .menu-mobile {
+        display: none;
+    }
+
+    .overlay {
+        display: none !important;
+    }
+
+    .navigation {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        box-shadow: none;
+        background: none;
+        z-index: auto;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .btn-primary {
+        font-size: 0.875rem;
+    }
 }

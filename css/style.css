@@ -262,7 +262,7 @@ button {
 /* ───────── HERO ───────── */
 .hero {
     position: relative;
-    background: url("/assets/temporario.jpg");
+    background: url("../assets/temporario.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;

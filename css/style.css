@@ -1,18 +1,18 @@
 :root {
     --bg-light: #E3E6EF;
     --bg-dark: #090909;
-    
+
     --text-light-1000: #ffffff;
     --text-light-900: #e8e8e8;
     --text-light-800: #d2d2d2;
     --text-light-700: #b5b5b5;
     --text-light-400: #6b6b6b;
-    
+
     --text-dark-1000: #000000;
     --text-dark-900: #1a1a1a;
     --text-dark-800: #2c2c2c;
     --text-dark-700: #454548;
-    
+
     --text-muted: #737a86;
     --accent-blue: #252C3A;
 
@@ -161,6 +161,7 @@ button {
     border-radius: 500px;
     transition: background-color 0.3s ease;
 }
+
 /* .btn-primary:hover {
     background-color: var(--text-light-800);
 } */
@@ -169,7 +170,7 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     opacity: 0;
@@ -217,7 +218,7 @@ button {
     display: block;
     background: var(--text-light-800);
     border-radius: 2px;
-    transition: 
+    transition:
         width 0.25s ease,
         transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
         opacity 0.3s ease;
@@ -260,8 +261,9 @@ button {
 
 /* ───────── HERO ───────── */
 .hero {
+    position: relative;
     background: url("/assets/temporario.jpg");
-    background-position: center top;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -272,16 +274,33 @@ button {
     align-items: start;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100dvh;
+    pointer-events: none;
+    background: 
+    radial-gradient(
+        63.56% 59.73% at 50% 50%, 
+        rgba(0, 0, 0, 0.00) 40%,
+        rgba(0, 0, 0, 0.40) 100%);
+    z-index: 0;
+}
+
 .hero-pill-subtitle {
     background: rgba(13, 13, 13, 0.20);
     border-radius: 500px;
     padding: 8px 20px;
     margin-bottom: 1.5rem;
-    box-shadow: 
+    box-shadow:
         -10px -6px 12px 0 rgba(75, 75, 75, 0.15) inset,
         -1px -1px 1px 0 rgba(157, 157, 157, 0.50) inset,
         1px 1px 1px 0 rgba(157, 157, 157, 0.50) inset,
         12px 8px 12px 0 rgba(0, 0, 0, 0.25) inset;
+    z-index: 1;
 }
 
 .hero-subtitle {
@@ -295,6 +314,7 @@ button {
     justify-content: start;
     align-items: start;
     gap: 36px;
+    z-index: 1;
 }
 
 .hero-title {
@@ -303,7 +323,7 @@ button {
     font-weight: 500;
     color: var(--text-light-900);
     letter-spacing: 0.5px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
 }
 
@@ -325,18 +345,18 @@ button {
     border-radius: 500px;
     padding: 16px 28px 16px 32px;
     color: var(--text-dark-900);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
 
     border: 3px solid transparent;
-    background-image: 
+    background-image:
         linear-gradient(#ffffff, #ffffff),
         linear-gradient(to bottom, #ffffff 45%, transparent 80%),
         linear-gradient(to right, #e8a04c, #f4e85c, #58f0b0, #66b2ff);
-  
+
     background-clip: padding-box, border-box, border-box;
     background-origin: padding-box, border-box, border-box;
 }
@@ -346,9 +366,9 @@ button {
     padding: 16px 32px;
     color: var(--text-light-900);
     background-color: #101010;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
-    box-shadow: 
+    box-shadow:
         -2px -3px 3px 0 rgba(108, 108, 108, 0.2) inset,
         2px 3px 3px 0 rgba(152, 152, 152, 0.2) inset;
 }

@@ -376,3 +376,7 @@ button {
 .hero-extra-info {
     display: none;
 }
+
+.code-image {
+    width: 200px;
+}

@@ -65,10 +65,9 @@ button {
 
 .section-description {
     font-size: 0.875rem;
-    color: var(--text-description);
-    margin: 0 auto;
-    line-height: 1.2;
-    font-weight: 500;
+    color: var(--text-dark-700);
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .container {

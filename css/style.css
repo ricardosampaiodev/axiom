@@ -105,6 +105,13 @@ button {
     left: 0;
     top: 4%;
     z-index: 9999;
+    mix-blend-mode: difference;
+    transition: mix-blend-mode 0s 0.4s;
+}
+
+.header.no-blend {
+    mix-blend-mode: normal;
+    transition: mix-blend-mode 0s 0s;
 }
 
 .logo {
@@ -124,9 +131,7 @@ button {
     right: -100%;
     width: 280px;
     height: 100dvh;
-    background-color: rgba(9, 9, 9, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(9, 9, 9, 0.85);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
     z-index: 100;
     transition: right 0.4s ease;
@@ -212,6 +217,10 @@ button {
 .menu-mobile.opened .bar:last-child {
     width: 24px;
     transform: translateY(-4.5px) rotate(-45deg);
+}
+
+.menu-mobile {
+    mix-blend-mode: difference;
 }
 
 .bar {

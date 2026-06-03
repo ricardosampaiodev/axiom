@@ -5,6 +5,9 @@ const overlay = document.querySelector("#menu-overlay");
 function toggleMenu() {
     const opened = btn.classList.toggle("opened");
 
+    const header = document.querySelector(".header");
+    if(header) { header.classList.toggle("no-blend", opened); }
+
     sidebar.classList.toggle("opened");
     overlay.classList.toggle("opened");
     document.body.style.overflow = opened ? "hidden" : "";
@@ -40,7 +43,7 @@ function initHeroShader() {
         vec3 color = vec3(0.0);
         for(int j = 0; j < 3; j++){
           for(int i=0; i < 5; i++){
-            color[j] += lineWidth*float(i*i) / abs(fract(t - 0.01*float(j)+float(i)*0.01)*3.5 - length(uv) + mod(uv.x+uv.y, 0.2));
+            color[j] += lineWidth*float(i*i) / abs(fract(t - 0.01*float(j)+float(i)*0.01)*4.0 - length(uv) + mod(uv.x+uv.y, 0.2));
           }
         }
         

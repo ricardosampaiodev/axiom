@@ -275,7 +275,8 @@ button {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 100dvh;
+    height: 100dvh;
+    min-height: 667px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -299,7 +300,8 @@ button {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100dvh;
+    height: 100dvh;
+    min-height: 667px;
     pointer-events: none;
     background: 
     radial-gradient(
@@ -564,6 +566,7 @@ button {
 /* ────────────────── CLIENTS ────────────────── */
 .clients {
     background-color: #E3E6EF;
+    padding-top: 1rem;
     padding-bottom: 4rem;
 }
 
@@ -577,11 +580,39 @@ button {
     color: var(--text-dark-900);
 }
 
+.clients-slider-wrapper {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 3rem 0;
 
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 
+    overflow: hidden;
+}
 
+.clients-slider {
+    display: flex;
+    width: max-content;
+    gap: 42px;
+    animation: infinite-scroll 30s linear infinite;
+}
 
+.client-logo {
+    height: 26px;
+    width: auto;
+    opacity: 0.9;
+    pointer-events: none;
+}
 
+@keyframes infinite-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 21px));
+    }
+}
 
 .code-image {
     width: 200px;

@@ -573,7 +573,7 @@ button {
 .clients-info {
     display: flex;
     flex-direction: column;
-    gap: 20px
+    gap: 1.25rem;
 }
 
 .clients-title {
@@ -594,7 +594,7 @@ button {
 .clients-slider {
     display: flex;
     width: max-content;
-    gap: 42px;
+    gap: 2.625rem;
     animation: infinite-scroll 30s linear infinite;
 }
 
@@ -614,6 +614,106 @@ button {
     }
 }
 
-.code-image {
-    width: 200px;
+/* ────────────────── IMPLEMENTATION ────────────────── */
+
+.implementation {
+    position: relative;
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    overflow-x: hidden;
+}
+
+.implementation::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("../assets/bg-implementation-mobile.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: -30%;
+    opacity: 0.7;
+}
+
+.implementation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 4rem;
+}
+
+.implementation-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem
+}
+
+.implementation-description {
+    color: var(--text-light-700);
+}
+
+.implementation-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.implementation-feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.implementation-feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #161616;
+    border: 1px solid #595959;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.implementation-feature-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.implementation-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.implementation-feature-title {
+    color: var(--text-light-700);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+}
+
+.implementation-feature-description {
+    color: var(--text-light-700);
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.implementation-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.implementation-code {
+    width: 150%;
+    max-width: none;
+    height: auto;
 }

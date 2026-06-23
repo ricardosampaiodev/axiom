@@ -636,6 +636,7 @@ button {
     background-repeat: no-repeat;
     background-position: top center;
     margin-top: 40%;
+    opacity: 0.4;
 }
 
 .implementation-content {
@@ -715,4 +716,140 @@ button {
     width: 150%;
     max-width: none;
     height: auto;
+}
+
+/* ────────────────── SECURITY ────────────────── */
+.security {
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.security-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.security-title {
+    font-size: 1.25rem;
+    letter-spacing: 0.4px;
+    color: var(--text-light-800);
+}
+
+.security-description {
+    font-size: 0.875rem;
+    color: var(--text-light-700);
+    line-height: 1.6;
+}
+
+.security-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.security-card {
+    position: relative;
+    background: linear-gradient(180deg, #313131 0%, #191919 100%);
+    border-radius: 20px;
+    padding: 20px 18px 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.security-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.security-card-title {
+    font-family: var(--font-poppins);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-light-800);
+    max-width: calc(100% - 70px);
+}
+
+.security-card-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: var(--bg-dark);
+    width: 68px;
+    height: 68px;
+    border-radius: 0px 0px 0px 24px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    z-index: 2;
+}
+
+.security-card-icon img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}
+
+.security-card::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    right: 68px;
+    top: 0;
+    left: auto;
+    box-shadow: 10px -10px 0px var(--bg-dark);
+    z-index: 2;
+}
+
+.security-card::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    right: 0;
+    top: 68px;
+    left: auto;
+    box-shadow: 10px -10px 0px var(--bg-dark);
+    z-index: 2;
+}
+
+.security-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    list-style: none;
+}
+
+.security-card-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: #fff;
+    line-height: normal;
+    max-width: calc(100% - 20px);
+}
+
+.security-check-icon {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    background-color: var(--bg-dark);
+    border-radius: 50%;
+    padding: 4px;
 }

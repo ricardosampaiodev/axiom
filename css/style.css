@@ -36,6 +36,7 @@ body {
     font-family: var(--font-poppins);
     background-color: var(--bg-dark);
     color: var(--text-primary);
+    overflow-x: hidden;
 }
 
 a {

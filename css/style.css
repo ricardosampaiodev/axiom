@@ -432,6 +432,8 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+    pointer-events: none;
+    user-select: none;
 }
 
 .features-gradient {
@@ -637,6 +639,8 @@ button {
     background-position: top center;
     margin-top: 40%;
     opacity: 0.4;
+    pointer-events: none;
+    user-select: none;
 }
 
 .implementation-content {
@@ -735,7 +739,6 @@ button {
 }
 
 .security-title {
-    font-size: 1.25rem;
     letter-spacing: 0.4px;
     color: var(--text-light-800);
 }
@@ -743,7 +746,6 @@ button {
 .security-description {
     font-size: 0.875rem;
     color: var(--text-light-700);
-    line-height: 1.6;
 }
 
 .security-cards {
@@ -838,10 +840,9 @@ button {
 .security-card-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 0.75rem;
-    color: #fff;
-    line-height: normal;
+    color: var(--text-light-1000);
     max-width: calc(100% - 20px);
 }
 
@@ -853,3 +854,168 @@ button {
     border-radius: 50%;
     padding: 4px;
 }
+
+/* ────────────────── PLANS ────────────────── */
+.plans {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5.75rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.plans-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.plans-title {
+    color: var(--text-light-800);
+}
+
+.plans-description {
+    color: var(--text-light-700);
+}
+
+.plans-cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.plan-card {
+    position: relative;
+    width: 100%;
+    max-width: 384px;
+    border-radius: 32px;
+    padding: 2.5rem 2rem 1.85rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    z-index: 1;
+}
+
+.plan-card::before {
+    content: '';
+    position: absolute;
+    inset: -30px;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+    clip-path: inset(30px round 32px);
+}
+
+.plan-basic::before {
+    background-image: url('../assets/bg-plans-card-blue.webp');
+}
+
+.plan-pro::before {
+    background-image: url('../assets/bg-plans-card-purple.webp');
+}
+
+.plan-corp::before {
+    background-image: url('../assets/bg-plans-card-orange.webp');
+}
+
+.plan-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(91deg, #E2A036 0.52%, #E66630 46.67%, #B91B1B 99.48%);
+    color: var(--text-light-1000);
+    font-size: 0.75rem;
+    padding: 8px 20px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    border: 1px solid #fff;
+    z-index: 100;
+}
+
+.plan-card-header {
+    border-bottom: 1px solid #D6D5DB;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.plan-title {
+    font-family: var(--font-clash);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-light-1000);
+    margin-bottom: 0.5rem;
+}
+
+.plan-description {
+    font-size: 0.875rem;
+    color: var(--text-light-900);
+}
+
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 2rem;
+}
+
+.plan-price .price-value {
+    font-family: var(--font-clash);
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-light-1000);
+}
+
+.plan-price .price-period {
+    font-size: 0.875rem;
+    color: var(--text-light-800);
+}
+
+.plan-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 3rem;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    font-size: 0.875rem;
+    color: var(--text-light-800);
+}
+
+.plan-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 14px;
+    border-radius: 500px;
+    font-size: 1rem;
+    color: var(--text-light-1000);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* transition: background-color 0.3s ease; */
+}
+/* 
+.plan-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+} */
+
+/* @media (min-width: 1024px) {
+    .plans-cards {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+    }
+    
+    .plan-card {
+        flex: 1;
+        max-width: 360px;
+    }
+} */
